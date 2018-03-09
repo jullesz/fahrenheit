@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main()
+{
+  float fahrenheit;
+  float celsius;
+
+  float lower , upper , step ;
+
+  //lower = 0;
+  //upper = 300;
+  //step = 20;
+
+  printf("Enter lower\t");
+  scanf("%f", &lower);
+  printf("\nEnter upper\t");
+  scanf("%f", &upper);
+  printf("\nEnter step\t");
+  scanf("%f", &step);
+
+  if ( step < 0 ) {
+      printf("ERROR: the step size is negative\n");
+      return 1;
+  }
+  if ( upper < lower ) {
+      printf("ERROR: the upper is lower than the lower\n");
+      return 1;
+  }
+  //fahrenheit = lower;
+
+  //while (fahrenheit <= upper) {
+      //celsius = 5 * (fahrenheit - 32) / 9;
+      //printf("%8.2f\t%8.2f\n", fahrenheit, celsius);
+      //fahrenheit = fahrenheit + step;
+//}
+
+for (fahrenheit = lower; fahrenheit <= upper; fahrenheit = fahrenheit + step)
+  {   celsius = 5 * (fahrenheit - 32) / 9;
+      printf("%8.2f\t%8.2f\n", fahrenheit, celsius);
+}
+
+  float user;
+  float cels;
+  printf("Would you like to convert your temperature from Fahrenheit to Celsius?\n Enter the number ");
+  scanf("%f", &user);
+  cels = 5 * (user - 32) / 9;
+  printf("%8.2f Fahrenheit is %8.2f Celsius", user, cels);
+  return 0;
+}
